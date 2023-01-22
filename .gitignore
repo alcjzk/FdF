@@ -1,0 +1,4 @@
+obj/
+fdf
+*.dSYM
+.vscode/
