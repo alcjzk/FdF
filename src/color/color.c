@@ -6,14 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 06:25:30 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/16 20:25:58 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:06:02 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
 #include "libft.h"
-#include "bool.h"
 #include "util.h"
 #include "color.h"
 
@@ -43,14 +40,4 @@ t_color	color_from_str(const char *str)
 		value = hex_value(*(str++));
 	}
 	return (color);
-}
-
-void	color_debug(t_color color)
-{
-	printf("t_color { R:%02X, G:%02X, B:%02X, A:%02X }\n",
-		(unsigned char)color.bytes[c_r],
-		(unsigned char)color.bytes[c_g],
-		(unsigned char)color.bytes[c_b],
-		(unsigned char)color.bytes[c_a]
-		);
 }

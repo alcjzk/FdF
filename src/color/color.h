@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 07:00:01 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/16 20:22:56 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:06:06 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define COLOR_H
 
 # include <stddef.h>
-# include <stdint.h>
 
 typedef union u_color
 {
@@ -40,7 +39,6 @@ typedef struct s_color4d
 
 //	Color
 t_color	color_from_str(const char *str);
-void	color_debug(t_color color);
 //	Color4d
 t_color	color_from_color4d(t_color4d *color4d);
 void	color_as_color4d(t_color color, t_color4d *color4d);
