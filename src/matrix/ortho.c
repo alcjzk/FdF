@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 01:55:02 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/17 17:34:37 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:01:26 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	matrix4d_ortho_mesh(t_matrix4d *matrix, t_mesh *mesh, double ratio)
 	t_bounds4d	bounds;
 	double		max;
 
-	bounds4d(&bounds, mesh->vertices, mesh->length);
+	bounds4d_init(&bounds, mesh->vertices, mesh->length);
 	bounds.max.x = dmax(dabs(bounds.max.x), dabs(bounds.min.x));
 	bounds.max.y = dmax(dabs(bounds.max.y), dabs(bounds.min.y));
 	max = dmax(bounds.max.x, bounds.max.y);

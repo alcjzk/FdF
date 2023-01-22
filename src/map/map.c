@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 15:33:37 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:01:33 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	map_transform(t_mesh *mesh)
 	double		max;
 
 	i = 0;
-	bounds4d(&bounds, mesh->vertices, mesh->length);
+	bounds4d_init(&bounds, mesh->vertices, mesh->length);
 	position.x = -bounds.min.x - ((bounds.max.x - bounds.min.x) / 2);
 	position.y = -bounds.min.y - ((bounds.max.y - bounds.min.y) / 2);
 	position.z = -bounds.min.z - ((bounds.max.z - bounds.min.z) / 2);

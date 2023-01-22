@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 01:37:28 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/17 17:36:52 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:01:06 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "util.h"
 #include "bounds4d.h"
 
-void	bounds4d(t_bounds4d *bounds, t_vec4d *vertices, size_t length)
+void	bounds4d_init(t_bounds4d *bounds, t_vec4d *vertices, size_t length)
 {
 	size_t	i;
 	t_vec4d	*vertex;

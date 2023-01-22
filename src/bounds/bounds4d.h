@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 01:33:20 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/17 17:34:03 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:01:15 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef struct s_bounds4d
 	t_vec4d	max;
 }	t_bounds4d;
 
-void	bounds4d(t_bounds4d *bounds, t_vec4d *vertices, size_t length);
+void	bounds4d_init(t_bounds4d *bounds, t_vec4d *vertices, size_t length);
 
 #endif
