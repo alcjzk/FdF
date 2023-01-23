@@ -8,7 +8,7 @@ INC_DIR = inc/ libft/inc/
 # Objects and dependencies
 OBJ_DIR = obj/
 
-# Sources
+# Source directories
 SRC_DIR = $(sort $(dir $(wildcard src/*/))) src/
 
 # Target directory
@@ -26,59 +26,36 @@ LDIR = $(LIB_DIR:%=-L%)
 NAME = fdf
 
 # Sources
+ifdef B
 SRCS =\
-main.c \
-vec4d.c	\
-vec4d_ops.c	\
-vec4d_ops_assign.c \
-bounds4d.c \
-ortho.c	\
-rotate.c \
-translate.c \
-scale.c \
-plane4d.c \
-util.c \
-matrix4d.c \
-status.c \
-image.c \
-modifiers.c \
-window.c \
-color.c \
-hooks.c \
-state.c \
-keymap.c \
-mesh.c \
-clip.c \
-view.c \
-projection.c \
-color4d_ops.c \
-color4d.c \
-projection_position.c \
-projection_rotation.c \
-draw.c \
-zbuffer.c \
-map.c \
-view_draw.c \
-keymap_handlers.c \
-map_vertex.c \
-map_row.c \
-map_rows.c \
-projection_select.c
-# render.c
-#map.c
-#buffer.c
-#keymap.c
-#world.c
-#world_rotation.c
-#world_position.c
-#world_scale.c
-#keymap.c
+main_bonus.c						vec4d_bonus.c	\
+vec4d_ops_bonus.c					vec4d_ops_assign_bonus.c \
+bounds4d_bonus.c					matrix4d_ortho_bonus.c	\
+matrix4d_rotate_bonus.c				matrix4d_translate_bonus.c \
+matrix4d_scale_bonus.c				matrix4d_bonus.c \
+plane4d_bonus.c						util_bonus.c \
+status_bonus.c						image_bonus.c \
+modifiers_bonus.c					window_bonus.c \
+hooks_bonus.c						state_bonus.c \
+keymap_bonus.c						mesh_bonus.c \
+clip_bonus.c						view_bonus.c \
+color_bonus.c						color4d_ops_bonus.c \
+color4d_bonus.c						projection_bonus.c \
+projection_position_bonus.c			projection_rotation_bonus.c \
+projection_select_bonus.c			draw_bonus.c \
+zbuffer_bonus.c						view_draw_bonus.c \
+keymap_handlers_bonus.c				map_bonus.c \
+map_vertex_bonus.c					map_row_bonus.c \
+map_rows_bonus.c
+else
+SRCS = main.c
+endif
 
 # Compiler
 CC = cc
 
 # Optimization flags
-OPT =
+OPT = -O3 -ffast-math
 
 # Extra flags
 EXTRA =-Wall -Werror -Wextra
@@ -103,7 +80,7 @@ override FLAGS +=\
 $(EXTRA) $(OPT) $(DEP) \
 $(INC_DIR:%=-I%) $(SRC_DIR:%=-I%)
 
-OBJS = $(SRCS:%.c=$(OBJ_DIR)%.o)
+OBJS := $(SRCS:%.c=$(OBJ_DIR)%.o)
 DEPS = $(SRCS:%.c=$(OBJ_DIR)%.d)
 
 ################################################################################
@@ -111,7 +88,7 @@ DEPS = $(SRCS:%.c=$(OBJ_DIR)%.d)
 ################################################################################
 
 # Default rule
-all: $(NAME)
+all: mandatory
 
 # Objects
 $(OBJS): $(OBJ_DIR)%.o: %.c | $(OBJ_DIR)
@@ -124,17 +101,27 @@ $(NAME): $(OBJS) | $(TARGET_DIR) libft
 libft:
 	make -C libft
 
+bonus:
+#	Run a full clean if the project was previously compiled without bonuses
+	-test -f $(OBJ_DIR)main.o && make fclean
+	make $(NAME) B="1"
+
+mandatory:
+#	Run a full clean if the project was previously compiled with bonuses
+	-test -f $(OBJ_DIR)main_bonus.o && make fclean
+	make $(NAME)
+
 # Cleanup
 clean_local:
 	rm -rf $(OBJS) $(DEPS)
 
-clean: clean_local
-	make fclean -C libft
+clean:
+	rm -rf $(OBJ_DIR)
 
-fclean_local: clean_local
+fclean_local: clean
 	rm -rf $(NAME)
 
-fclean: clean_local
+fclean: fclean_local
 	make fclean -C libft
 
 # Debug
