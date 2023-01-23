@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:24:24 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:45:15 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:51:30 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ size_t	map_row_width(t_map_row *row)
 	size_t	width;
 
 	width = 0;
-	if (!row->row)
+	if (!row || !row->row)
 		return (0);
 	cell = row->row[width];
 	while (cell && is_vertex(cell))
