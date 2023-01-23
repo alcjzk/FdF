@@ -6,11 +6,10 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 22:42:24 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 15:16:26 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:40:44 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 #include "bounds4d.h"
 #include "util.h"

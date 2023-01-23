@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 22:33:53 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:29:56 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:39:44 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 
 # include <sys/time.h>
 # include "matrix4d.h"
-# include "vec4d.h"
 # include "vec3d.h"
 # include "modifiers.h"
 # include "mesh.h"
