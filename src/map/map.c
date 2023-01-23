@@ -6,20 +6,14 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:40:05 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:47:20 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "vec4d.h"
-#include "get_next_line.h"
 #include "libft.h"
 #include "bounds4d.h"
 #include "util.h"
-#include "color.h"
-#include "matrix4d.h"
 #include "map.h"
 
 void	map_transform(t_mesh *mesh)

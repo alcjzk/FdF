@@ -6,15 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:24:24 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:43:01 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:45:15 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include "get_next_line.h"
 #include "libft.h"
 #include "map.h"
 
