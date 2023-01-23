@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 21:04:20 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/16 16:17:35 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:05:08 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # define WINDOW_TITLE "FdF"
 
 # include <stddef.h>
-# include <mlx.h>
-# include "bool.h"
 # include "status.h"
 
 typedef struct s_window

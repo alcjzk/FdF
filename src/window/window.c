@@ -6,11 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 21:06:18 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:52:15 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:06:05 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <mlx.h>
 #include "window.h"
 
 t_status	window_create(
