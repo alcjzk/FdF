@@ -6,12 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:40:58 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:52:38 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:44:20 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
-#include <stdio.h>
 #include "hooks.h"
 #include "state.h"
 
