@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 20:10:45 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:40:13 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:52:56 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "get_next_line.h"
 #include "map.h"
 
-t_status	map_rows_create(t_map_rows *rows, const char *path)
+BOOL	map_rows_create(t_map_rows *rows, const char *path)
 {
 	const char	*line;
 	t_map_row	**head;
@@ -25,7 +25,7 @@ t_status	map_rows_create(t_map_rows *rows, const char *path)
 	ft_bzero(rows, sizeof(t_map_rows));
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		return (err_sys);
+		return (FALSE);
 	head = &rows->start;
 	line = get_next_line(fd);
 	while (line)
@@ -33,16 +33,16 @@ t_status	map_rows_create(t_map_rows *rows, const char *path)
 		rows->length++;
 		*head = map_row_create(line);
 		if (!*head)
-			return (err_sys);
+			return (FALSE);
 		head = &(*head)->next;
 		free((void *)line);
 		line = get_next_line(fd);
 	}
 	close(fd);
-	return (ok);
+	return (TRUE);
 }
 
-t_status	map_rows_parse(t_map_rows *rows, size_t width, t_vec4d *vertices)
+BOOL	map_rows_parse(t_map_rows *rows, size_t width, t_vec4d *vertices)
 {
 	size_t		i;
 	size_t		z;
@@ -54,12 +54,12 @@ t_status	map_rows_parse(t_map_rows *rows, size_t width, t_vec4d *vertices)
 	while (head)
 	{
 		if (map_row_parse(head->row, z, i, vertices) != width)
-			return (err_map);
+			return (FALSE);
 		head = head->next;
 		i += width;
 		z++;
 	}
-	return (ok);
+	return (TRUE);
 }
 
 void	map_rows_destroy(t_map_rows *rows)

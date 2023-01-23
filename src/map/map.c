@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:47:20 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:54:34 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,16 @@ void	map_vertices_z(t_mesh *mesh, t_vec4d *vertices, size_t w, size_t h)
 	}
 }
 
-t_status	map_alloc(t_mesh *mesh, t_vec4d **vertices, size_t w, size_t h)
+BOOL	map_alloc(t_mesh *mesh, t_vec4d **vertices, size_t w, size_t h)
 {
 	*vertices = ft_calloc(w * h, sizeof(t_vec4d));
 	if (!*vertices)
-		return (err_sys);
+		return (FALSE);
 	mesh->length = (w * (h - 1) + (w - 1) * h) * 2;
 	mesh->vertices = ft_calloc(mesh->length, sizeof(t_vec4d));
 	if (!mesh->vertices)
-		return (err_sys);
-	return (ok);
+		return (FALSE);
+	return (TRUE);
 }
 
 t_status	map_mesh_create(t_mesh *mesh, const char *map_path)
@@ -95,14 +95,14 @@ t_status	map_mesh_create(t_mesh *mesh, const char *map_path)
 	size_t		width;
 
 	ft_bzero(&rows, sizeof(t_map_rows));
-	if (map_rows_create(&rows, map_path) != ok)
+	if (!map_rows_create(&rows, map_path))
 		return (err_sys);
 	width = map_row_width(rows.start);
 	if (width == 0)
 		return (err_map);
-	if (map_alloc(mesh, &vertices, width, rows.length) != ok)
+	if (!map_alloc(mesh, &vertices, width, rows.length))
 		return (err_sys);
-	if (map_rows_parse(&rows, width, vertices) != ok)
+	if (!map_rows_parse(&rows, width, vertices))
 		return (err_map);
 	map_vertices_x(mesh, vertices, width, rows.length);
 	map_vertices_z(mesh, vertices, width, rows.length);
