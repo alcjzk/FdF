@@ -6,13 +6,12 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 01:15:17 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/16 19:12:35 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:17:40 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "libft.h"
-#include "vec3d.h"
 #include "matrix4d.h"
 
 void	matrix4d_rotate(t_matrix4d *matrix, t_vec3d *rotation)

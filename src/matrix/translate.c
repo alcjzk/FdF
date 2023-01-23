@@ -6,12 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 01:26:32 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/16 19:06:12 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:17:53 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "vec3d.h"
 #include "matrix4d.h"
 
 void	matrix4d_translate(t_matrix4d *matrix, t_vec3d *position)

@@ -6,14 +6,13 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 20:46:16 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/17 18:53:11 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:16:58 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATRIX4D_H
 # define MATRIX4D_H
 
-# include <stddef.h>
 # include "vec4d.h"
 # include "mesh.h"
 # include "vec3d.h"
