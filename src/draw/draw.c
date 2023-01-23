@@ -6,12 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:06:10 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/21 23:56:23 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:22:03 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "util.h"
 #include "draw.h"
 
 BOOL	line_init(t_line *line, t_vec4d *start, t_vec4d *end)
