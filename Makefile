@@ -50,7 +50,6 @@ hooks.c \
 state.c \
 keymap.c \
 mesh.c \
-line.c \
 clip.c \
 view.c \
 projection.c \
