@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:48:57 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:53:05 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:28:04 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ t_status	view_create_buffers(t_view *view, t_window *win)
 
 	view->front = &view->frames[0];
 	view->back = &view->frames[1];
-	status = image_new(view->front, win->mlx, win->width, win->height);
+	status = image_create(view->front, win->mlx, win->width, win->height);
 	if (status != ok)
 		return (status);
-	status = image_new(view->back, win->mlx, win->width, win->height);
+	status = image_create(view->back, win->mlx, win->width, win->height);
 	if (status != ok)
 		return (status);
 	status = zbuffer_create(&view->zbuffer, win->width, win->height);

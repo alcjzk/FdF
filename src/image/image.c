@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 07:15:30 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:52:06 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:28:43 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	image_put_pixel(t_image *image, int x, int y, t_color color)
 	addr[y * image->width + x] = color.value;
 }
 
-t_status	image_new(t_image *image, void *mlx, size_t width, size_t height)
+t_status	image_create(t_image *image, void *mlx, size_t width, size_t height)
 {
 	int	endian;
 	int	bpp;
@@ -36,9 +36,6 @@ t_status	image_new(t_image *image, void *mlx, size_t width, size_t height)
 	image->addr = mlx_get_data_addr(image->img, &bpp, &bpl, &endian);
 	if (!image->addr)
 		return (err_mlx);
-	(void)endian;
-	(void)bpp;
-	(void)bpl;
 	image->width = width;
 	image->height = height;
 	return (ok);
