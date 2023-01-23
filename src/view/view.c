@@ -6,17 +6,13 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:48:57 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 19:28:04 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:58:00 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 #include "state.h"
-#include "vec4d.h"
-#include "draw.h"
 #include "map.h"
 #include "view.h"
 

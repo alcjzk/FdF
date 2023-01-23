@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:48:07 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 08:31:05 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:58:33 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 # include "image.h"
 # include "vec4d.h"
 # include "window.h"
-# include "matrix4d.h"
-# include "projection.h"
 # include "zbuffer.h"
+# include "projection.h"
 # include "clip.h"
 
 typedef struct s_view
