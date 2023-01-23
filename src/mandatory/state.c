@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:40:58 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 21:44:20 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:31:29 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	state_destroy(t_state *state)
 
 int	state_update(t_state *state)
 {
-	view_update(&state->view, state);
+	(void)state;
+	view_update(&state->view);
 	return (0);
 }

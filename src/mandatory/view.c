@@ -6,13 +6,12 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:48:57 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 21:58:00 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:28:25 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
 #include "libft.h"
-#include "state.h"
 #include "map.h"
 #include "view.h"
 
@@ -61,7 +60,7 @@ t_status	view_create(t_view *view, t_window *win, const char *map_path)
 	return (ok);
 }
 
-void	view_update(t_view *view, void *param)
+void	view_update(t_view *view)
 {
 	t_vec4d		*vec_in;
 	t_vec4d		*vec_out;
@@ -70,7 +69,7 @@ void	view_update(t_view *view, void *param)
 
 	i = 0;
 	win = view->window;
-	projection_update(&view->projection, &((t_state *)param)->modifiers);
+	projection_update(&view->projection);
 	while (i < view->mesh.length)
 	{
 		vec_in = &view->mesh.vertices[i];

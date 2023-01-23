@@ -48,7 +48,25 @@ keymap_handlers_bonus.c				map_bonus.c \
 map_vertex_bonus.c					map_row_bonus.c \
 map_rows_bonus.c
 else
-SRCS = main.c
+SRCS =\
+main.c								vec4d.c	\
+vec4d_ops.c							vec4d_ops_assign.c \
+bounds4d.c							matrix4d_ortho.c	\
+matrix4d_rotate.c					matrix4d_translate.c \
+matrix4d_scale.c					matrix4d.c \
+plane4d.c							util.c \
+status.c							image.c \
+modifiers.c							window.c \
+hooks.c								state.c \
+keymap.c							mesh.c \
+clip.c								view.c \
+color.c								color4d_ops.c \
+color4d.c							projection.c \
+projection_select.c					draw.c \
+zbuffer.c							view_draw.c \
+keymap_handlers.c					map.c \
+map_vertex.c						map_row.c \
+map_rows.c
 endif
 
 # Compiler

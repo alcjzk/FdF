@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 10:38:40 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 19:35:51 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:29:21 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,6 @@ int	handle_set_isometric(t_event *event)
 {
 	if (event->kind == ek_keydown)
 		projection_isometric(&((t_state *)(event->param))->view.projection);
-	return (0);
-}
-
-int	handle_set_parallel(t_event *event)
-{
-	if (event->kind == ek_keydown)
-		projection_parallel(&((t_state *)(event->param))->view.projection);
 	return (0);
 }
 

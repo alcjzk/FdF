@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:16:04 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:39:39 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:29:28 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ int		keymap_handle_key(t_keymap *keymap, t_event *event);
 int		handle_modifier(t_event *event);
 int		handle_destroy(t_event *event);
 int		handle_set_isometric(t_event *event);
-int		handle_set_parallel(t_event *event);
 
 #endif
