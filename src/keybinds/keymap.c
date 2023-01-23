@@ -6,13 +6,11 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:16:22 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:39:33 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:34:44 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "hooks.h"
-#include "state.h"
 #include "keymap.h"
 
 void	keymap_init(t_keymap *keymap)
