@@ -6,13 +6,12 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 07:26:18 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 15:11:16 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:24:23 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "keymap.h"
 #include "state.h"
-#include <stdio.h>
 #include "hooks.h"
 
 int	on_destroy(void *param)
