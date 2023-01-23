@@ -28,7 +28,6 @@ NAME = fdf
 # Sources
 SRCS =\
 main.c \
-vec2i.c	\
 vec4d.c	\
 vec4d_ops.c	\
 vec4d_ops_assign.c \
@@ -42,7 +41,6 @@ util.c \
 matrix4d.c \
 status.c \
 image.c \
-vec3i.c \
 modifiers.c \
 window.c \
 color.c \
