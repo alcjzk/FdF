@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 16:01:33 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:40:05 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ t_status	map_mesh_create(t_mesh *mesh, const char *map_path)
 	size_t		width;
 
 	ft_bzero(&rows, sizeof(t_map_rows));
-	if (map_rows_from_file(&rows, map_path) != ok)
+	if (map_rows_create(&rows, map_path) != ok)
 		return (err_sys);
 	width = map_row_width(rows.start);
 	if (width == 0)

@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:24:24 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:18:49 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:43:01 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,29 @@
 #include "libft.h"
 #include "map.h"
 
-t_map_row	*map_row_from_line(const char *line)
+void	map_row_destroy(t_map_row *row)
+{
+	char	*cell;
+	char	**inner;
+
+	if (row)
+	{
+		if (row->row)
+		{
+			inner = row->row;
+			cell = *(inner++);
+			while (cell)
+			{
+				free(cell);
+				cell = *(inner++);
+			}
+			free(row->row);
+		}
+		free(row);
+	}
+}
+
+t_map_row	*map_row_create(const char *line)
 {
 	t_map_row	*row;
 

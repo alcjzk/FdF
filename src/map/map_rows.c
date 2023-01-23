@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 20:10:45 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:20:01 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:40:13 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "get_next_line.h"
 #include "map.h"
 
-t_status	map_rows_from_file(t_map_rows *rows, const char *path)
+t_status	map_rows_create(t_map_rows *rows, const char *path)
 {
 	const char	*line;
 	t_map_row	**head;
@@ -31,7 +31,7 @@ t_status	map_rows_from_file(t_map_rows *rows, const char *path)
 	while (line)
 	{
 		rows->length++;
-		*head = map_row_from_line(line);
+		*head = map_row_create(line);
 		if (!*head)
 			return (err_sys);
 		head = &(*head)->next;
@@ -66,22 +66,12 @@ void	map_rows_destroy(t_map_rows *rows)
 {
 	t_map_row	*head;
 	t_map_row	*next;
-	char		*cell;
-	char		**row;
 
 	head = rows->start;
 	while (head)
 	{
 		next = head->next;
-		row = head->row;
-		cell = *(row++);
-		while (cell)
-		{
-			free(cell);
-			cell = *(row++);
-		}
-		free(head->row);
-		free(head);
+		map_row_destroy(head);
 		head = next;
 	}
 }
