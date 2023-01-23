@@ -64,6 +64,7 @@ view_draw.c \
 keymap_handlers.c \
 map_vertex.c \
 map_row.c \
+map_rows.c \
 projection_select.c
 # render.c
 #map.c

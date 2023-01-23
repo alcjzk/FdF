@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:24:24 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 15:33:19 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:18:49 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,17 @@
 #include "libft.h"
 #include "map.h"
 
-t_status	map_rows_from_file(t_map_rows *rows, const char *path)
+t_map_row	*map_row_from_line(const char *line)
 {
-	const char	*line;
-	t_map_row	**head;
-	int			fd;
+	t_map_row	*row;
 
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
-		return (err_sys);
-	head = &rows->start;
-	line = get_next_line(fd);
-	while (line)
-	{
-		rows->length++;
-		*head = ft_calloc(1, sizeof(t_map_row));
-		(*head)->row = ft_split(line, ' ');
-		if (!(*head)->row)
-			return (err_sys);
-		head = &(*head)->next;
-		free((void *)line);
-		line = get_next_line(fd);
-	}
-	close(fd);
-	return (ok);
+	row = ft_calloc(1, sizeof(t_map_row));
+	if (!row)
+		return (NULL);
+	row->row = ft_split(line, ' ');
+	if (!row->row)
+		return (NULL);
+	return (row);
 }
 
 size_t	map_row_width(t_map_row *row)
@@ -77,49 +64,4 @@ size_t	map_row_parse(char **row, double z, size_t i, t_vec4d *vertices)
 		x++;
 	}
 	return (x);
-}
-
-t_status	map_rows_parse(t_map_rows *rows, size_t width, t_vec4d *vertices)
-{
-	size_t		i;
-	size_t		z;
-	t_map_row	*head;
-
-	i = 0;
-	z = 0;
-	head = rows->start;
-	while (head)
-	{
-		if (map_row_parse(head->row, z, i, vertices) != width)
-			return (err_map);
-		head = head->next;
-		i += width;
-		z++;
-	}
-	return (ok);
-}
-
-void	map_rows_destroy(t_map_rows *rows)
-{
-	t_map_row	*head;
-	t_map_row	*next;
-	char		*cell;
-	char		**row;
-
-	head = rows->start;
-	while (head)
-	{
-		next = head->next;
-		row = head->row;
-		cell = *(row++);
-		while (cell)
-		{
-			free(cell);
-			printf("a ");
-			cell = *(row++);
-		}
-		free(head->row);
-		free(head);
-		head = next;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:47:02 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 15:33:06 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:16:32 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ typedef struct s_parser
 BOOL		is_vertex(char *str);
 void		map_vertex(t_vec4d *vertex, char *str, double x, double z);
 
-t_status	map_rows_from_file(t_map_rows *rows, const char *path);
 size_t		map_row_width(t_map_row *row);
 size_t		map_row_parse(char **row, double z, size_t i, t_vec4d *vertices);
+t_map_row	*map_row_from_line(const char *line);
+
+t_status	map_rows_from_file(t_map_rows *rows, const char *path);
 t_status	map_rows_parse(t_map_rows *rows, size_t width, t_vec4d *vertices);
 void		map_rows_destroy(t_map_rows *rows);
 
