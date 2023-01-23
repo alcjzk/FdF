@@ -6,11 +6,10 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/23 20:54:34 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 20:57:05 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec4d.h"
 #include "libft.h"
 #include "bounds4d.h"
 #include "util.h"
