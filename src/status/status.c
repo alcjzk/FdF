@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 09:36:53 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 10:51:48 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:09:02 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_error(t_status status)
 	else if (status == err_map)
 		write(2, "Map error!", 11);
 	else if (status == err_arg)
-		write(2, "Invalid number of arguments!", 29);
+		write(2, "Usage: ./fdf map_path\n", 23);
 	else if (status == err_mlx)
 		write(2, "Mlx error!", 11);
 }
