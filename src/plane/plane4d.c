@@ -6,14 +6,12 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 20:49:17 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/17 18:59:19 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:38:02 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "plane4d.h"
-#include <stdlib.h>
-#include <math.h>
 
 void	plane4d_intersect(t_plane4d *plane, t_line4d *line, t_vec4d *out)
 {
