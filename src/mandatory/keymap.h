@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:16:04 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 01:29:28 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:40:11 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ typedef struct s_keymap
 
 void	keymap_init(t_keymap *keymap);
 int		keymap_handle_key(t_keymap *keymap, t_event *event);
-int		handle_modifier(t_event *event);
 int		handle_destroy(t_event *event);
-int		handle_set_isometric(t_event *event);
 
 #endif

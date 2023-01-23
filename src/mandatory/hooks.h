@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 07:25:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/16 21:35:39 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:40:20 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ typedef struct s_event
 
 int	on_destroy(void *param);
 int	on_keyup(int keycode, void *param);
-int	on_keydown(int keycode, void *param);
 
 #endif
