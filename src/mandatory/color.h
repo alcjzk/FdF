@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 07:00:01 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/22 16:06:06 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:42:41 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ typedef struct s_color4d
 	double	b;
 }	t_color4d;
 
-//	Color
-t_color	color_from_str(const char *str);
 //	Color4d
 t_color	color_from_color4d(t_color4d *color4d);
 void	color_as_color4d(t_color color, t_color4d *color4d);

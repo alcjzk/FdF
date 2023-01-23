@@ -56,11 +56,10 @@ matrix4d_rotate.c					matrix4d_translate.c \
 matrix4d_scale.c					matrix4d.c \
 plane4d.c							util.c \
 status.c							image.c \
-window.c \
-hooks.c								state.c \
-keymap.c							mesh.c \
-clip.c								view.c \
-color.c								color4d_ops.c \
+window.c 							hooks.c	\
+state.c 							keymap.c \
+mesh.c								clip.c \
+view.c								color4d_ops.c \
 color4d.c							projection.c \
 projection_select.c					draw.c \
 zbuffer.c							view_draw.c \
