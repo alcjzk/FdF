@@ -6,14 +6,13 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 22:33:53 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 01:31:07 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:35:42 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PROJECTION_H
 # define PROJECTION_H
 
-# include <sys/time.h>
 # include "matrix4d.h"
 # include "vec3d.h"
 # include "mesh.h"
@@ -25,7 +24,6 @@ typedef struct s_projection
 	t_matrix4d			mat_zyx;
 	t_matrix4d			matrix;
 	t_vec3d				rotation;
-	unsigned long long	timestamp;
 }	t_projection;
 
 void	projection_init(
