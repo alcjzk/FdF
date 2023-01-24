@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 10:27:26 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:31:25 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,46 +32,6 @@ void	map_transform(t_mesh *mesh)
 	{
 		vec4d_add_assign(&mesh->vertices[i], &position);
 		vec4d_div_assign(&mesh->vertices[i++], max);
-	}
-}
-
-void	map_vertices_x(t_mesh *mesh, t_vec4d *vertices, size_t w, size_t h)
-{
-	size_t	x;
-	size_t	z;
-	size_t	i;
-
-	i = 0;
-	z = 0;
-	while (z < h)
-	{
-		x = 1;
-		while (x < w)
-		{
-			mesh->vertices[i++] = vertices[z * w + (x - 1)];
-			mesh->vertices[i++] = vertices[z * w + (x++)];
-		}
-		z++;
-	}
-}
-
-void	map_vertices_z(t_mesh *mesh, t_vec4d *vertices, size_t w, size_t h)
-{
-	size_t	x;
-	size_t	z;
-	size_t	i;
-
-	x = 0;
-	i = (h * (w - 1)) * 2;
-	while (x < w)
-	{
-		z = 1;
-		while (z < h)
-		{
-			mesh->vertices[i++] = vertices[(z - 1) * w + x];
-			mesh->vertices[i++] = vertices[(z++) * w + x];
-		}
-		x++;
 	}
 }
 

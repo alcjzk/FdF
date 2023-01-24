@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:22:14 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 00:38:17 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:31:32 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,44 @@ void	map_vertex(t_vec4d *vertex, char *str, double x, double z)
 	color = ft_strchr(str, ',');
 	if (color)
 		vertex->color = color_from_str(++color);
+}
+
+void	map_vertices_x(t_mesh *mesh, t_vec4d *vertices, size_t w, size_t h)
+{
+	size_t	x;
+	size_t	z;
+	size_t	i;
+
+	i = 0;
+	z = 0;
+	while (z < h)
+	{
+		x = 1;
+		while (x < w)
+		{
+			mesh->vertices[i++] = vertices[z * w + (x - 1)];
+			mesh->vertices[i++] = vertices[z * w + (x++)];
+		}
+		z++;
+	}
+}
+
+void	map_vertices_z(t_mesh *mesh, t_vec4d *vertices, size_t w, size_t h)
+{
+	size_t	x;
+	size_t	z;
+	size_t	i;
+
+	x = 0;
+	i = (h * (w - 1)) * 2;
+	while (x < w)
+	{
+		z = 1;
+		while (z < h)
+		{
+			mesh->vertices[i++] = vertices[(z - 1) * w + x];
+			mesh->vertices[i++] = vertices[(z++) * w + x];
+		}
+		x++;
+	}
 }
