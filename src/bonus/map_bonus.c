@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:46:55 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 00:35:11 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:27:26 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,26 +87,40 @@ BOOL	map_alloc(t_mesh *mesh, t_vec4d **vertices, size_t w, size_t h)
 	return (TRUE);
 }
 
-t_status	map_mesh_create(t_mesh *mesh, const char *map_path)
+static t_status	map_mesh_create_impl(
+	t_mesh *mesh,
+	const char *map_path,
+	t_map_rows *rows,
+	t_vec4d **vertices)
 {
-	t_map_rows	rows;
-	t_vec4d		*vertices;
 	size_t		width;
 
-	ft_bzero(&rows, sizeof(t_map_rows));
-	if (!map_rows_create(&rows, map_path))
+	ft_bzero(rows, sizeof(t_map_rows));
+	*vertices = NULL;
+	if (!map_rows_create(rows, map_path))
 		return (err_sys);
-	width = map_row_width(rows.start);
+	width = map_row_width(rows->start);
 	if (width == 0)
 		return (err_map);
-	if (!map_alloc(mesh, &vertices, width, rows.length))
+	if (!map_alloc(mesh, vertices, width, rows->length))
 		return (err_sys);
-	if (!map_rows_parse(&rows, width, vertices))
+	if (!map_rows_parse(rows, width, *vertices))
 		return (err_map);
-	map_vertices_x(mesh, vertices, width, rows.length);
-	map_vertices_z(mesh, vertices, width, rows.length);
+	map_vertices_x(mesh, *vertices, width, rows->length);
+	map_vertices_z(mesh, *vertices, width, rows->length);
 	map_transform(mesh);
+	return (ok);
+}
+
+t_status	map_mesh_create(t_mesh *mesh, const char *map_path)
+{
+	t_status	status;
+	t_map_rows	rows;
+	t_vec4d		*vertices;
+
+	vertices = NULL;
+	status = map_mesh_create_impl(mesh, map_path, &rows, &vertices);
 	map_rows_destroy(&rows);
 	free(vertices);
-	return (ok);
+	return (status);
 }
