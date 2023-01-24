@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 20:10:45 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 00:38:06 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/24 06:32:55 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ BOOL	map_rows_parse(t_map_rows *rows, size_t width, t_vec4d *vertices)
 		i += width;
 		z++;
 	}
+	if (width <= 1 && z <= 1)
+		return (FALSE);
 	return (TRUE);
 }
 
