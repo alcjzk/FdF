@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:48:57 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 00:45:15 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:29:57 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,26 +58,17 @@ t_status	view_create(t_view *view, t_window *win, const char *map_path)
 		return (err_sys);
 	clipbox_default(&view->clipbox);
 	projection_init(&view->projection, &view->mesh, win);
+	view_set_initial_scale(view);
 	return (ok);
 }
 
 void	view_update(t_view *view, void *param)
 {
-	t_vec4d		*vec_in;
-	t_vec4d		*vec_out;
 	t_window	*win;
-	size_t		i;
 
-	i = 0;
 	win = view->window;
 	projection_update(&view->projection, &((t_state *)param)->modifiers);
-	while (i < view->mesh.length)
-	{
-		vec_in = &view->mesh.vertices[i];
-		vec_out = &view->vertices[i];
-		matrix4d_multiply_vec4d(&view->projection.matrix, vec_in, vec_out);
-		i++;
-	}
+	view_transform_vertices(view);
 	zbuffer_clear(&view->zbuffer);
 	image_clear(view->back);
 	view_draw(view);

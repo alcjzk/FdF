@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:48:57 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 01:28:25 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/27 01:13:24 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ t_status	view_create(t_view *view, t_window *win, const char *map_path)
 		return (err_sys);
 	clipbox_default(&view->clipbox);
 	projection_init(&view->projection, &view->mesh, win);
+	view_set_initial_scale(view);
 	return (ok);
 }
 

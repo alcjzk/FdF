@@ -6,7 +6,7 @@
 /*   By: tjaasalo <tjaasalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 22:33:53 by tjaasalo          #+#    #+#             */
-/*   Updated: 2023/01/24 01:35:42 by tjaasalo         ###   ########.fr       */
+/*   Updated: 2023/01/27 01:15:40 by tjaasalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ typedef struct s_projection
 {
 	t_matrix4d			mat_ortho;
 	t_matrix4d			mat_zyx;
+	t_matrix4d			mat_scale;
+	t_matrix4d			mat_zyxs;
 	t_matrix4d			matrix;
 	t_vec3d				rotation;
+	double				scale;
 }	t_projection;
 
 void	projection_init(
