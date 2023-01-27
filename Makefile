@@ -92,7 +92,7 @@ FWK = $(FRAMEWORKS:%=-framework %)
 ################################################################################
 
 vpath %.c $(SRC_DIR)
-.PHONY: all clean fclean re debug d libft
+.PHONY: all clean fclean re debug d libft bonus mandatory
 override FLAGS +=\
 $(EXTRA) $(OPT) $(DEP) \
 $(INC_DIR:%=-I%) $(SRC_DIR:%=-I%)
